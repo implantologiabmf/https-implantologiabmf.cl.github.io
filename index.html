@@ -9,31 +9,31 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            margin: 0; /* Asegura que no haya márgenes predeterminados */
-            padding: 0; /* Asegura que no haya rellenos predeterminados */
-            box-sizing: border-box; /* Incluye el padding y el border en el ancho y alto del elemento */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         .container {
-            max-width: 1200px; /* Establece un ancho máximo para el contenido */
-            margin: 0 auto; /* Centra el contenido horizontalmente */
-            padding-left: 1rem; /* Añade un poco de espacio a la izquierda */
-            padding-right: 1rem; /* Añade un poco de espacio a la derecha */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
         .hero-section {
             background-image: url('hero-image.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            padding-top: 10rem; /* Aumenta el espacio superior en móviles */
-            padding-bottom: 10rem; /* Aumenta el espacio inferior en móviles */
+            padding-top: 10rem;
+            padding-bottom: 10rem;
             text-align: center;
         }
         .hero-section h1 {
-            font-size: 2.5rem; /* Reduce el tamaño del título en móviles */
+            font-size: 2.5rem;
             margin-bottom: 1rem;
         }
         .hero-section p {
-            font-size: 1.1rem; /* Reduce el tamaño del subtítulo en móviles */
+            font-size: 1.1rem;
             margin-bottom: 2rem;
         }
         .tab-content {
@@ -48,21 +48,21 @@
             margin: 0;
             padding: 0;
             align-items: center;
-            overflow-x: auto; /* Permite el desplazamiento horizontal si los enlaces no caben */
+            overflow-x: auto;
         }
         .nav-links li {
-            margin-right: 15px; /* Reduce el margen entre los elementos del menú en móviles */
+            margin-right: 15px;
         }
         .nav-links li:last-child {
             margin-right: 0;
         }
         .nav-links a {
             display: block;
-            padding: 0.75rem 0; /* Reduce el relleno vertical en móviles */
-            white-space: nowrap; /* Evita que el texto de los enlaces se corte */
+            padding: 0.75rem 0;
+            white-space: nowrap;
         }
         #contacto-info {
-            display: none; /* Oculta la información de contacto inicialmente */
+            display: none;
             margin-top: 1rem;
             padding: 1rem;
             border: 1px solid #ccc;
@@ -70,7 +70,6 @@
             background-color: #f9f9f9;
             text-align: center;
         }
-        /* Estilos adicionales para mejorar la visualización en móviles si es necesario */
         @media (max-width: 768px) {
             .nav-links {
                 padding-left: 1rem;
@@ -90,10 +89,10 @@
                 font-size: 1rem;
             }
             .text-3xl {
-                font-size: 1.75rem; /* Reduce el tamaño del encabezado en móviles */
+                font-size: 1.75rem;
             }
             .w-3/4 {
-                width: 90%; /* Ocupa más ancho en pantallas pequeñas */
+                width: 90%;
             }
         }
     </style>
@@ -101,7 +100,8 @@
 <body class="bg-gray-100">
     <header class="bg-blue-500 text-white py-3 flex justify-between items-center shadow-md sticky top-0 z-10 rounded-md">
         <div class="logo text-xl font-bold ml-4 cursor-pointer" data-tab="inicio">Elite Odontología Avanzada</div>
-        <nav class="mr-2 md:mr-4"> <ul class="nav-links">
+        <nav class="mr-2 md:mr-4">
+            <ul class="nav-links">
                 <li><a href="#" class="hover:text-blue-300 transition duration-300" data-tab="quienes-somos">Quiénes Somos</a></li>
                 <li><a href="#" class="hover:text-blue-300 transition duration-300" data-tab="implantes">Implantes</a></li>
                 <li><a href="#" class="hover:text-blue-300 transition duration-300" data-tab="laser">Láser Therapy®</a></li>
@@ -158,10 +158,10 @@
                 En Elite Odontología Avanzada, utilizamos tecnología de punta y materiales de la más alta calidad para asegurar resultados exitosos y naturales.
             </p>
             <ul class="list-disc list-inside mb-6 text-gray-700">
-                <li>Evaluación y planificación personalizada.</li>
-                <li>Colocación de implantes con precisión y seguridad.</li>
-                <li>Prótesis sobre implantes: fijas o removibles.</li>
-                <li>Mantenimiento y seguimiento a largo plazo.</li>
+                <li>Evaluación y planificación personalizada</li>
+                <li>Colocación de implantes con precisión y seguridad</li>
+                <li>Prótesis sobre implantes: fijas o removibles</li>
+                <li>Mantenimiento y seguimiento a largo plazo</li>
             </ul>
             <div class="flex justify-center mt-6">
                 <img src="implantes-image.jpg" alt="Implante Dental" class="rounded-lg shadow-md w-full md:w-3/4">
@@ -177,7 +177,7 @@
                 <li>Tratamientos de parestesias con láser de baja potencia fotobiomodulador.</li>
                 <li>Blanqueamiento dental Phillips Zoom.</li>
                 <li>Terapia para la sensibilidad dental.</li>
-                <li>ILIB, Estimulación en cicatrización de heridas y antiaging.</li>
+                <li>ILIB, Estimulación en cicatrización de heridas.</li>
             </ul>
             <div class="flex justify-center mt-6">
                 <img src="laser-image.jpg" alt="Láser Dental" class="rounded-lg shadow-md w-full md:w-3/4">
@@ -247,4 +247,25 @@
                 document.querySelectorAll('.tab-content').forEach(content => {
                     content.classList.remove('active');
                 });
-                document
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+        document.querySelector('.logo').addEventListener('click', function() {
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById('inicio').classList.add('active');
+        });
+        document.querySelector('[data-tab="inicio"]').click();
+
+        // Script para mostrar la información de contacto
+        const mostrarContactoBtn = document.getElementById('mostrar-contacto-btn');
+        const contactoInfoDiv = document.getElementById('contacto-info');
+        const formularioContacto = document.getElementById('formulario-contacto');
+
+        mostrarContactoBtn.addEventListener('click', function() {
+            contactoInfoDiv.style.display = 'block';
+            formularioContacto.style.display = 'block'; // También mostramos el formulario al hacer clic
+            mostrarContactoBtn.style.display = 'none'; // Ocultamos el botón después de hacer clic
+        });
+    </script>
