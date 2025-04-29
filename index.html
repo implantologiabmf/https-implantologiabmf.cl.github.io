@@ -24,16 +24,16 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            padding-top: 10rem;
-            padding-bottom: 10rem;
+            padding-top: 6rem; /* Reducido el padding superior en móviles */
+            padding-bottom: 6rem; /* Reducido el padding inferior en móviles */
             text-align: center;
         }
         .hero-section h1 {
-            font-size: 2.5rem;
+            font-size: 2rem; /* Reducido el tamaño del título en móviles */
             margin-bottom: 1rem;
         }
         .hero-section p {
-            font-size: 1.1rem;
+            font-size: 1rem; /* Reducido el tamaño del subtítulo en móviles */
             margin-bottom: 2rem;
         }
         .tab-content {
@@ -42,24 +42,37 @@
         .tab-content.active {
             display: block;
         }
+        .header-container { /* Nuevo contenedor para el header */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem; /* Reducido el padding del header en móviles */
+        }
+        .logo {
+            font-size: 1.2rem; /* Reducido el tamaño del logo en móviles */
+            font-weight: bold;
+            cursor: pointer;
+            white-space: nowrap; /* Evita que el logo se corte */
+        }
         .nav-links {
             display: flex;
             list-style: none;
             margin: 0;
             padding: 0;
             align-items: center;
-            overflow-x: auto;
+            overflow-x: auto; /* Permite el scroll horizontal si los enlaces no caben */
         }
         .nav-links li {
-            margin-right: 15px;
+            margin-right: 10px; /* Reducido el margen entre los elementos del menú en móviles */
         }
         .nav-links li:last-child {
             margin-right: 0;
         }
         .nav-links a {
             display: block;
-            padding: 0.75rem 0;
-            white-space: nowrap;
+            padding: 0.5rem 0; /* Reducido el padding vertical de los enlaces en móviles */
+            font-size: 0.9rem; /* Reducido el tamaño de la fuente de los enlaces en móviles */
+            white-space: nowrap; /* Evita que el texto de los enlaces se corte */
         }
         #contacto-info {
             display: none;
@@ -70,45 +83,86 @@
             background-color: #f9f9f9;
             text-align: center;
         }
-        @media (max-width: 768px) {
-            .nav-links {
-                padding-left: 1rem;
-                padding-right: 1rem;
+        /* Media query para pantallas más grandes (desktops) */
+        @media (min-width: 769px) {
+            .header-container {
+                padding: 0.75rem 2rem;
+            }
+            .logo {
+                font-size: 1.5rem;
             }
             .nav-links li {
-                margin-right: 10px;
+                margin-right: 20px;
             }
-            .hero-section {
-                padding-top: 6rem;
-                padding-bottom: 6rem;
-            }
-            .hero-section h1 {
-                font-size: 2rem;
-            }
-            .hero-section p {
+            .nav-links a {
+                padding: 0.75rem 0;
                 font-size: 1rem;
             }
-            .text-3xl {
-                font-size: 1.75rem;
+            .hero-section {
+                padding-top: 10rem;
+                padding-bottom: 10rem;
             }
-            .w-3/4 {
-                width: 90%;
+            .hero-section h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
             }
+            .hero-section p {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+        }
+        .text-3xl {
+            font-size: 1.75rem; /* Reducido el tamaño del encabezado en móviles */
+        }
+        .md\:text-3xl {
+            font-size: 2rem; /* Tamaño del encabezado en pantallas medianas y mayores */
+        }
+        .text-2xl {
+            font-size: 1.5rem; /* Reducido el tamaño del sub-encabezado en móviles */
+        }
+        .md\:text-2xl {
+            font-size: 1.75rem; /* Tamaño del sub-encabezado en pantallas medianas y mayores */
+        }
+        .text-lg {
+            font-size: 1rem; /* Reducido el tamaño del texto largo en móviles */
+        }
+        .md\:text-lg {
+            font-size: 1.1rem; /* Tamaño del texto largo en pantallas medianas y mayores */
+        }
+        .w-full {
+            width: 100%; /* Asegura que las imágenes ocupen el ancho completo en móviles */
+        }
+        .md\:w-3\/4 {
+            width: 75%; /* Ancho de las imágenes en pantallas medianas y mayores */
+        }
+        .py-8 {
+            padding-top: 1.5rem; /* Reducido el padding vertical en main en móviles */
+            padding-bottom: 1.5rem; /* Reducido el padding vertical en main en móviles */
+        }
+        .md\:py-8 {
+            padding-top: 2rem; /* Padding vertical en main en pantallas medianas y mayores */
+            padding-bottom: 2rem; /* Padding vertical en main en pantallas medianas y mayores */
+        }
+        .py-3 {
+            padding-top: 0.75rem; /* Reducido el padding vertical en footer en móviles */
+            padding-bottom: 0.75rem; /* Reducido el padding vertical en footer en móviles */
         }
     </style>
 </head>
 <body class="bg-gray-100">
-    <header class="bg-blue-500 text-white py-3 flex justify-between items-center shadow-md sticky top-0 z-10 rounded-md">
-        <div class="logo text-xl font-bold ml-4 cursor-pointer" data-tab="inicio">Elite Odontología Avanzada</div>
-        <nav class="mr-2 md:mr-4">
-            <ul class="nav-links">
-                <li><a href="#" class="hover:text-blue-300 transition duration-300" data-tab="quienes-somos">Quiénes Somos</a></li>
-                <li><a href="#" class="hover:text-blue-300 transition duration-300" data-tab="implantes">Implantes</a></li>
-                <li><a href="#" class="hover:text-blue-300 transition duration-300" data-tab="laser">Láser Therapy®</a></li>
-                <li><a href="#" class="hover:text-blue-300 transition duration-300" data-tab="estetica">Estética</a></li>
-                <li><a href="#" class="hover:text-blue-300 transition duration-300" data-tab="contacto">Contacto</a></li>
-            </ul>
-        </nav>
+    <header class="bg-blue-500 text-white shadow-md sticky top-0 z-10 rounded-md">
+        <div class="header-container">
+            <div class="logo cursor-pointer" data-tab="inicio">Elite Odontología Avanzada</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" class="hover:text-blue-300 transition duration-300" data-tab="quienes-somos">Quiénes Somos</a></li>
+                    <li><a href="#" class="hover:text-blue-300 transition duration-300" data-tab="implantes">Implantes</a></li>
+                    <li><a href="#" class="hover:text-blue-300 transition duration-300" data-tab="laser">Láser Therapy®</a></li>
+                    <li><a href="#" class="hover:text-blue-300 transition duration-300" data-tab="estetica">Estética</a></li>
+                    <li><a href="#" class="hover:text-blue-300 transition duration-300" data-tab="contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section class="hero-section text-white text-center py-16 px-4 rounded-md">
@@ -269,3 +323,5 @@
             mostrarContactoBtn.style.display = 'none'; // Ocultamos el botón después de hacer clic
         });
     </script>
+</body>
+</html>
