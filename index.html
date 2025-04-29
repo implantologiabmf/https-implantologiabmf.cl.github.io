@@ -2,26 +2,26 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Imagen</title>
+    <title>Imagen Completa</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-color: black; /* Cambiamos el color de fondo a negro */
+            background-color: black; /* Fondo negro */
             display: flex;
             justify-content: center; /* Centra horizontalmente */
             align-items: center; /* Centra verticalmente */
-            min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+            min-height: 100vh; /* Ocupa toda la altura de la ventana */
         }
         img {
             display: block;
-            max-width: 90%; /* Ajusta el ancho máximo según necesites */
-            max-height: 90vh; /* Ajusta la altura máxima según necesites */
-            margin: auto; /* Centra la imagen si es más pequeña que el contenedor */
+            max-width: 100vw; /* Ancho máximo igual al ancho de la ventana */
+            max-height: 100vh; /* Alto máximo igual al alto de la ventana */
+            object-fit: contain; /* Ajusta la imagen manteniendo su proporción */
         }
     </style>
 </head>
 <body>
-    <img src="foto.jpg" alt="Imagen">
+    <img src="foto.jpg" alt="Imagen Completa">
 </body>
 </html>
