@@ -1,10 +1,27 @@
-&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Foto&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;img src="foto.jpg"&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Imagen</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Un color de fondo suave */
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+        }
+        img {
+            display: block;
+            max-width: 90%; /* Ajusta el ancho máximo según necesites */
+            max-height: 90vh; /* Ajusta la altura máxima según necesites */
+            margin: auto; /* Centra la imagen si es más pequeña que el contenedor */
+        }
+    </style>
+</head>
+<body>
+    <img src="foto.jpg" alt="Imagen">
+</body>
+</html>
