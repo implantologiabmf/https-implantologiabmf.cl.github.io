@@ -19,23 +19,45 @@
             padding-left: 1rem;
             padding-right: 1rem;
         }
+        /* Estilos para la sección hero con imagen de fondo transparente */
         .hero-section {
-            background-image: url('hero-image.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            position: relative; /* Necesario para posicionar el pseudo-elemento */
+            overflow: hidden; /* Oculta partes de la imagen si se desborda */
             padding-top: 6rem; /* Reducido el padding superior en móviles */
             padding-bottom: 6rem; /* Reducido el padding inferior en móviles */
             text-align: center;
+            color: white; /* Asegura que el texto sea visible sobre la imagen */
+            z-index: 0; /* Asegura que el contenido esté por encima del pseudo-elemento */
+            min-height: 50vh; /* Asegura una altura mínima para ver el fondo */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
-        .hero-section h1 {
-            font-size: 2rem; /* Reducido el tamaño del título en móviles */
-            margin-bottom: 1rem;
+
+        /* Pseudo-elemento para la imagen de fondo con transparencia */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('inicio-image.jpg'); /* Corregido: Usar el nombre del archivo subido */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.5; /* 50% de transparencia */
+            z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
         }
-        .hero-section p {
-            font-size: 1rem; /* Reducido el tamaño del subtítulo en móviles */
-            margin-bottom: 2rem;
+
+        .hero-section h1,
+        .hero-section p,
+        .hero-section a {
+            position: relative; /* Asegura que el contenido esté por encima del pseudo-elemento */
+            z-index: 1;
         }
+
         .tab-content {
             display: none;
         }
@@ -101,6 +123,7 @@
             .hero-section {
                 padding-top: 10rem;
                 padding-bottom: 10rem;
+                min-height: 70vh; /* Altura mínima mayor en desktop */
             }
             .hero-section h1 {
                 font-size: 2.5rem;
